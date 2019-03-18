@@ -12,9 +12,28 @@ namespace WindowsFormsApp3
 {
     public partial class Form1 : Form
     {
+        Circle circle;
+        Cylinder cylinder;
+
         public Form1()
         {
             InitializeComponent();
+            circle = new Circle();
+            cylinder = new Cylinder();
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            circle.R = Convert.ToDouble(textBox2.Text == "" ? "0" : textBox2.Text);
+            textBox5.Text = circle.ToString();
+
+            cylinder.R = Convert.ToDouble(textBox3.Text == "" ? "0" : textBox3.Text);
+            cylinder.H = Convert.ToDouble(textBox4.Text == "" ? "0" : textBox4.Text);
+            textBox1.Text = cylinder.ToString();
+        }
+
+       
+        
+
     }
 }
